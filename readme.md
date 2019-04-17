@@ -26,13 +26,13 @@ use FinnishZips;
 
 You can get the area name for given zip code easily. You can pass the code either as `integer` or numeric `string`.
 ``` PHP
-echo FinnishZips::getArea(00100); // "PK-seutu"
-echo FinnishZips::getArea('90520'); // "Oulun seutu"
+echo FinnishZips::getArea(00100);       // => "PK-seutu"
+echo FinnishZips::getArea('90520');     // => "Oulun seutu"
 ```
 
 You can also get a numeric key specific for the area. It can be useful when it's used in computing.
 ``` PHP
-echo FinnishZips::getAreaKey('90520'); // "Oulun seutu"
+echo FinnishZips::getAreaKey('90520');  // => 7
 ```
 
 ## Contributing
