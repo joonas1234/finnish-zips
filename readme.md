@@ -15,6 +15,15 @@ Via Composer
 $ composer require spacha/finnish-zips
 ```
 
+Add the service provider and the facade to `config/app.php`.
+```PHP
+Spacha\FinnishZips\FinnishZipsServiceProvider::class,
+
+// ...
+
+'FinnishZips' => Spacha\FinnishZips\Facades\FinnishZips::class,
+```
+
 ## Usage
 
 After you have installed the package and also set up the service provider and facade, you can start using it right away.
