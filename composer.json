@@ -1,0 +1,43 @@
+{
+    "name": "spacha/finnish-zips",
+    "description": ":description",
+    "license": "license",
+    "authors": [
+        {
+            "name": "Miika Sikala",
+            "email": "miikasikala96@gmail.com",
+            "homepage": "https://spacha.dev"
+        }
+    ],
+    "homepage": "https://github.com/spacha/finnish-zips",
+    "keywords": ["Laravel", "FinnishZips"],
+    "require": {
+        "illuminate/support": "~5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~7.0",
+        "mockery/mockery": "^1.1",
+        "orchestra/testbench": "~3.0",
+        "sempro/phpunit-pretty-print": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spacha\\FinnishZips\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spacha\\FinnishZips\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Spacha\\FinnishZips\\FinnishZipsServiceProvider"
+            ],
+            "aliases": {
+                "FinnishZips": "Spacha\\FinnishZips\\Facades\\FinnishZips"
+            }
+        }
+    }
+}
