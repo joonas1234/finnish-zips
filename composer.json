@@ -1,7 +1,7 @@
 {
     "name": "spacha/finnish-zips",
-    "description": ":description",
-    "license": "license",
+    "description": "Tool for handling finnish zips in Laravel",
+    "license": "MIT",
     "authors": [
         {
             "name": "Miika Sikala",
@@ -10,7 +10,7 @@
         }
     ],
     "homepage": "https://github.com/spacha/finnish-zips",
-    "keywords": ["Laravel", "FinnishZips"],
+    "keywords": ["Laravel", "FinnishZips", "postal", "zip"],
     "require": {
         "illuminate/support": "~5"
     },

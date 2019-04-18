@@ -31,7 +31,7 @@ class FinnishZipsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/finnish-zips.php', 'finnish-zips');
+        // $this->mergeConfigFrom(__DIR__.'/../config/finnish-zips.php', 'finnish-zips');
 
         // Register the service the package provides.
         $this->app->singleton('finnish-zips', function ($app) {
@@ -57,9 +57,9 @@ class FinnishZipsServiceProvider extends ServiceProvider
     protected function bootForConsole()
     {
         // Publishing the configuration file.
-        $this->publishes([
-            __DIR__.'/../config/finnish-zips.php' => config_path('finnish-zips.php'),
-        ], 'finnish-zips.config');
+        // $this->publishes([
+        //     __DIR__.'/../config/finnish-zips.php' => config_path('finnish-zips.php'),
+        // ], 'finnish-zips.config');
 
         // Publishing the views.
         /*$this->publishes([
