@@ -25,12 +25,20 @@ class FinnishZips
     protected $listsDir;
 
     /**
+    * Are we currently in silent mode or not.
+    *
+    * @var bool
+    */
+    protected $silentMode;
+
+    /**
     * Construct the class.
     */
     public function __construct()
     {
     	$this->listsDir = __DIR__ . '/Lists/';
     	$this->provinceZips = $this->loadList('province-zips');
+    	$this->silentMode = config('finnish-zips.silent', false);
     }
 
     /**
@@ -56,8 +64,16 @@ class FinnishZips
     */
     public function getArea($zip = null) : string
     {
-    	$zip = $this->validateAndParseZip($zip);
+    	// if in silent mode, catch validation exceptions and return an empty string
+    	if ($this->silentMode) {
+	    	try {
+	    		$zip = $this->validateAndParseZip($zip);
+	    	} catch(ZipValidationException $e) { return ''; }
+	    } else {
+	    	$zip = $this->validateAndParseZip($zip);
+	    }
 
+    	// loop through our list and test, to which range the zip belongs
     	foreach ($this->provinceZips as $province => $zipRanges) {
     		foreach ($zipRanges as $zipRange) {
 	    		if ($this->withinRange($zip, $zipRange[0], $zipRange[1]))
@@ -65,7 +81,7 @@ class FinnishZips
     		}
     	}
 
-    	return 'Unknown'; 	// this should never happen
+    	return ''; 	// this should never happen
     }
 
 	/**
@@ -103,9 +119,14 @@ class FinnishZips
 		return (int)$zip;
 	}
 
-	//////
-	// TO Helpers.php
-	//////
+
+	/******************************
+	* 			HELPERS
+	*******************************
+	*
+	* @todo Put these into separate
+	*		helpers class.
+	******************************/
 
 	/**
 	* Returns true if given number is within given range. If no min and max are

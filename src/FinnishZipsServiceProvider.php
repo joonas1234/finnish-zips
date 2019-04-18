@@ -31,7 +31,7 @@ class FinnishZipsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/finnish-zips.php', 'finnish-zips');
+        // $this->mergeConfigFrom(__DIR__.'/../config/finnish-zips.php', 'finnish-zips');
 
         // Register the service the package provides.
         $this->app->singleton('finnish-zips', function ($app) {
