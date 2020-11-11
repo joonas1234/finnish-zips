@@ -12,7 +12,7 @@
     "homepage": "https://github.com/spacha/finnish-zips",
     "keywords": ["Laravel", "FinnishZips", "postal", "zip"],
     "require": {
-        "illuminate/support": "~5"
+        "illuminate/support": "5.*|^6.0|^7.0"
     },
     "require-dev": {
         "phpunit/phpunit": "~7.0",
